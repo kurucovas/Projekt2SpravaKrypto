@@ -23,6 +23,7 @@ public class CryptoController {
             return cryptoService.cryptos;
         }
 
+
     @GetMapping("/list")
     public List<Crypto> getAllCryptoList() {
         return cryptoService.getAllCryptosList();

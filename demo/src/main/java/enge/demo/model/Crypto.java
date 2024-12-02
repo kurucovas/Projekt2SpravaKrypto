@@ -58,7 +58,6 @@ public class Crypto implements Comparable<Crypto> {
         this.quantity = quantity;
     }
 
-
     @Override
     public int compareTo(Crypto otherCrypto) {
        return name.compareTo(otherCrypto.name);
