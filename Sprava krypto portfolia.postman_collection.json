@@ -1,0 +1,148 @@
+{
+	"info": {
+		"_postman_id": "7ef840fd-a971-40ab-abe7-c10a1151b582",
+		"name": "Sprava krypto portfolia",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "40024472"
+	},
+	"item": [
+		{
+			"name": "5 aktualizacia krypto podla ID",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 67890,\r\n    \"name\": \"Ethereum\",\r\n    \"symbol\": \"ETH\",\r\n    \"price\" : 4000, \r\n    \"quantity\": 150000\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/cryptos/12345",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"cryptos",
+						"12345"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "1 pridanie krypto",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n    {\r\n      \"id\" : \"12345\",\r\n      \"name\" : \"Bitcoin\",\r\n      \"symbol\" : \"BTC\",\r\n      \"price\" : \"80000\",\r\n      \"quantity\" : \"1000\" \r\n    },\r\n    { \r\n      \"id\" : \"67890\",\r\n      \"name\" : \"Ethereum\",\r\n      \"symbol\" : \"ETH\",\r\n      \"price\" : \"3500\",\r\n      \"quantity\" : \"100000\" \r\n    }\r\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/cryptos/add",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"cryptos",
+						"add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "4 detail krypto podla id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/cryptos/67890",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"cryptos",
+						"67890"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "3 zoradovanie",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/cryptos/sort?sort=quantity",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"cryptos",
+						"sort"
+					],
+					"query": [
+						{
+							"key": "sort",
+							"value": "quantity"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "2 zoznam krypto",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/cryptos/list",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"cryptos",
+						"list"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "6 vypocet celkovej hodnoty portfolia",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/cryptos/portfolio-value",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"cryptos",
+						"portfolio-value"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
