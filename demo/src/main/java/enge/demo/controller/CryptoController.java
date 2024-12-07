@@ -9,6 +9,7 @@ import java.util.List;
 
 @RestController
 public class CryptoController {
+
     CryptoService cryptoService;
 
     public CryptoController(CryptoService cryptoService) {

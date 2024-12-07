@@ -68,6 +68,7 @@ public class CryptoService {
         }
         return null;
     }
+
     public double calculatePortfolioValue() {
         double totalValue = 0.0;
         for (Crypto crypto : cryptos) {
