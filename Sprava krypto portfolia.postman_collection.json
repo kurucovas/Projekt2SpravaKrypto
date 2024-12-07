@@ -1,0 +1,199 @@
+{
+	"info": {
+		"_postman_id": "7ef840fd-a971-40ab-abe7-c10a1151b582",
+		"name": "Sprava krypto portfolia",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "40024472"
+	},
+	"item": [
+		{
+<<<<<<< HEAD
+			"name": "4 aktualizacia krypto podla ID",
+=======
+			"name": "5 aktualizacia krypto podla ID",
+>>>>>>> origin/master
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 67890,\r\n    \"name\": \"Ethereum\",\r\n    \"symbol\": \"ETH\",\r\n    \"price\" : 4000, \r\n    \"quantity\": 150000\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+<<<<<<< HEAD
+					"raw": "localhost:8080/cryptos/67890",
+=======
+					"raw": "localhost:8080/cryptos/12345",
+>>>>>>> origin/master
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"cryptos",
+<<<<<<< HEAD
+						"67890"
+=======
+						"12345"
+>>>>>>> origin/master
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "1 pridanie krypto",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n    {\r\n      \"id\" : \"12345\",\r\n      \"name\" : \"Bitcoin\",\r\n      \"symbol\" : \"BTC\",\r\n      \"price\" : \"80000\",\r\n      \"quantity\" : \"1000\" \r\n    },\r\n    { \r\n      \"id\" : \"67890\",\r\n      \"name\" : \"Ethereum\",\r\n      \"symbol\" : \"ETH\",\r\n      \"price\" : \"3500\",\r\n      \"quantity\" : \"100000\" \r\n    }\r\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+<<<<<<< HEAD
+					"raw": "localhost:8080/cryptos",
+=======
+					"raw": "localhost:8080/cryptos/add",
+>>>>>>> origin/master
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+<<<<<<< HEAD
+						"cryptos"
+=======
+						"cryptos",
+						"add"
+>>>>>>> origin/master
+					]
+				}
+			},
+			"response": []
+		},
+		{
+<<<<<<< HEAD
+			"name": "3 detail krypto podla id",
+=======
+			"name": "4 detail krypto podla id",
+>>>>>>> origin/master
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/cryptos/67890",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"cryptos",
+						"67890"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+<<<<<<< HEAD
+			"name": "2 zoznam krypto s moznostou zoradovania",
+=======
+			"name": "3 zoradovanie",
+>>>>>>> origin/master
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+<<<<<<< HEAD
+					"raw": "localhost:8080/cryptos?sort=price",
+=======
+					"raw": "localhost:8080/cryptos/sort?sort=quantity",
+>>>>>>> origin/master
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+<<<<<<< HEAD
+						"cryptos"
+=======
+						"cryptos",
+						"sort"
+>>>>>>> origin/master
+					],
+					"query": [
+						{
+							"key": "sort",
+<<<<<<< HEAD
+							"value": "price"
+=======
+							"value": "quantity"
+>>>>>>> origin/master
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+<<<<<<< HEAD
+			"name": "5 vypocet celkovej hodnoty portfolia",
+=======
+			"name": "2 zoznam krypto",
+>>>>>>> origin/master
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+<<<<<<< HEAD
+					"raw": "localhost:8080/portfolio-value",
+=======
+					"raw": "localhost:8080/cryptos/list",
+>>>>>>> origin/master
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+<<<<<<< HEAD
+=======
+						"cryptos",
+						"list"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "6 vypocet celkovej hodnoty portfolia",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/cryptos/portfolio-value",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"cryptos",
+>>>>>>> origin/master
+						"portfolio-value"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
