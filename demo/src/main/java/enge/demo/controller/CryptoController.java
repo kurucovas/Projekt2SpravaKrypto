@@ -8,7 +8,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 @RestController
-@RequestMapping("cryptos")
 public class CryptoController {
     CryptoService cryptoService;
 
@@ -16,25 +15,17 @@ public class CryptoController {
         this.cryptoService = cryptoService;
     }
 
-    @PostMapping("/add")
-    public List<Crypto> addCryptos(@RequestBody List<Crypto> cryptos) {
-            cryptoService.addCrypto(new Crypto(12345, "Bitcoin", "BTC", 80000, 1000));
-            cryptoService.addCrypto(new Crypto(67890, "Ethereum", "ETH", 3500, 100000));
-            return cryptoService.cryptos;
+    @PostMapping("/cryptos")
+    public void addCryptos(@RequestBody List<Crypto> cryptos) {
+            cryptoService.addCryptos(cryptos);
         }
 
-
-    @GetMapping("/list")
-    public List<Crypto> getAllCryptoList() {
-        return cryptoService.getAllCryptosList();
+    @GetMapping("/cryptos")
+    public List<Crypto> getAllCryptoList(@RequestParam(required = false) String sort) {
+        return cryptoService.getAllCryptosList(sort);
     }
 
-    @GetMapping("/sort")
-    public List<Crypto> sortedCryptoList(@RequestParam String sort) {
-        return cryptoService.getSortedCryptos(sort);
-    }
-
-    @GetMapping("/{id}")
+    @GetMapping("/cryptos/{id}")
     public Crypto getCryptoById(@PathVariable("id") int id) {
         Crypto crypto = cryptoService.getCryptoById(id);
         if (crypto != null) {
@@ -43,7 +34,7 @@ public class CryptoController {
         return null;
 
     }
-    @PutMapping("/{id}")
+    @PutMapping("/cryptos/{id}")
     public Crypto updateCrypto(@PathVariable("id") int id, @RequestBody Crypto updatedCrypto) {
         Crypto crypto = cryptoService.updateCrypto(id, updatedCrypto);
         if (crypto != null) {

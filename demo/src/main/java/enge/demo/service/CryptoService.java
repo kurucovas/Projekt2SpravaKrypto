@@ -15,8 +15,27 @@ public class CryptoService {
     public void addCrypto(Crypto crypto) {
         cryptos.add(crypto);
     }
+    public void addCryptos(List<Crypto>cryptosList){
+        cryptos.addAll(cryptosList);
+    }
 
-    public List<Crypto> getAllCryptosList() {
+    public List<Crypto> getAllCryptosList(String sort) {
+        if (sort != null) {
+            switch (sort.toLowerCase()) {
+                case "price":
+                    cryptos.sort(Comparator.comparing(Crypto::getPrice));
+                    break;
+                case "name":
+                    cryptos.sort(Comparator.comparing(Crypto::getName));
+                    break;
+                case "quantity":
+                    cryptos.sort(Comparator.comparing(Crypto::getQuantity));
+                    break;
+                default:
+                    // Ak je neznámy parameter, nenastane zoradenie
+                    break;
+            }
+        }
         return cryptos;
     }
 
@@ -28,16 +47,6 @@ public class CryptoService {
         cryptos.sort(comparator);
     }
 
-    public List<Crypto> getSortedCryptos(String sort) {
-        if (sort.equals("price")) {
-            cryptos.sort(Comparator.comparing(Crypto::getPrice));
-        } else if (sort.equals("name")) {
-            cryptos.sort(Comparator.comparing(Crypto::getName));
-        } else if (sort.equals("quantity")) {
-            cryptos.sort(Comparator.comparing(Crypto::getName));
-        }
-        return cryptos;
-    }
 
     public Crypto getCryptoById(int id) {
         return cryptos.stream()
@@ -59,7 +68,6 @@ public class CryptoService {
         }
         return null;
     }
-
 
     public double calculatePortfolioValue() {
         double totalValue = 0.0;
