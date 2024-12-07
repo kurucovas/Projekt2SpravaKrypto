@@ -47,7 +47,6 @@ public class CryptoService {
         cryptos.sort(comparator);
     }
 
-
     public Crypto getCryptoById(int id) {
         return cryptos.stream()
                 .filter(crypto -> crypto.getId() == id)
