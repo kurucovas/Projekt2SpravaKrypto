@@ -32,8 +32,8 @@ public class CryptoController {
            return crypto;
         }
         return null;
-
     }
+
     @PutMapping("/cryptos/{id}")
     public Crypto updateCrypto(@PathVariable("id") int id, @RequestBody Crypto updatedCrypto) {
         Crypto crypto = cryptoService.updateCrypto(id, updatedCrypto);
